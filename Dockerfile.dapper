@@ -4,8 +4,8 @@ ADD http://dev-tool.oss-cn-shenzhen.aliyuncs.com/git/tools.tar.gz /tmp/tools.tar
 RUN mkdir -p ${GOPATH}/src/golang.org/x/tools && cd ${GOPATH}/src/golang.org/x && tar -xzvf /tmp/tools.tar.gz && go get github.com/golang/lint/golint
 RUN curl -sL http://dev-tool.oss-cn-shenzhen.aliyuncs.com/docker/Linux/x86_64/docker-1.10.3 > /usr/bin/docker && \
     chmod +x /usr/bin/docker
-RUN mv /etc/apt/sources.list /etc/apt/sources.list.bk
-ADD http://dev-tool.oss-cn-shenzhen.aliyuncs.com/sources.list /etc/apt/sources.list
+#RUN mv /etc/apt/sources.list /etc/apt/sources.list.bk
+#ADD http://dev-tool.oss-cn-shenzhen.aliyuncs.com/sources.list /etc/apt/sources.list
 RUN apt-get update && \
     apt-get install -y xz-utils
 ENV PATH /go/bin:$PATH
